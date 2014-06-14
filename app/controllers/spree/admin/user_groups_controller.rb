@@ -39,5 +39,6 @@ class Spree::Admin::UserGroupsController < Spree::Admin::ResourceController
 
   def load_data
     @calculators = Spree::UserGroup.calculators
+    #@calculators = Spree::UserGroup.calculators.map{|cal| cal unless cal.model_name == "Spree::Calculator::PerVariantPricing"}.compact
   end
 end
